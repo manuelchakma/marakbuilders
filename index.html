@@ -6,6 +6,12 @@
   <title>Marak Builders | Northeast Traditional & Modern Homes</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -35,22 +41,22 @@
   <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center text-white" style="background-image: url('images/hero-bg.jpg');">
     <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center">
       <h2 class="text-4xl md:text-5xl font-bold mb-4">Building Dreams, Preserving Traditions</h2>
-      <p class="mb-6">Affordable Northeast Traditional & Modern Homes with Transparency and Trust</p>
+      <p class="mb-6 text-xl" id="animated-tagline"></p>
       <a href="#services" class="bg-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">Explore Services</a>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about" class="py-16 container mx-auto px-6">
     <h3 class="text-3xl font-bold text-center mb-6">About Us</h3>
     <p class="text-lg text-center max-w-3xl mx-auto">
-      At Marak Builders, we combine heritage craftsmanship with modern techniques to create homes
-      that are not only affordable but also rich in cultural identity. We ensure fair wages to our skilled laborers,
-      transparent pricing with no hidden costs, and bring opportunities to local talents.
+      At Marak Builders, we honor the rich architectural traditions of Northeast India by combining the timeless artistry of tribal craftsmanship with modern construction techniques. Our homes are designed to reflect cultural identity, local aesthetics, and sustainable practices, while remaining affordable and durable.
+      <br><br>
+      We take pride in nurturing local talent, providing fair wages to our skilled laborers, and maintaining complete transparency in pricing with no hidden costs. Every project is a collaboration, blending the expertise of our master craftsmen with innovative solutions, ensuring that each home we build is not just a structure, but a living testament to heritage, comfort, and lasting quality.
     </p>
   </section>
 
-  <!-- Services -->
+  <!-- Services Section -->
   <section id="services" class="py-16 bg-gray-100">
     <div class="container mx-auto px-6">
       <h3 class="text-3xl font-bold text-center mb-10">Our Services</h3>
@@ -69,31 +75,30 @@
     </div>
   </section>
 
-  <!-- Gallery -->
+  <!-- Gallery Section with Hover Animations -->
   <section id="gallery" class="py-16 container mx-auto px-6">
     <h3 class="text-3xl font-bold text-center mb-10">Gallery</h3>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="images/gallery1.jpg" alt="House Design 1" class="rounded-lg shadow">
-      <img src="images/gallery2.jpg" alt="House Design 2" class="rounded-lg shadow">
-      <img src="images/gallery3.jpg" alt="House Design 3" class="rounded-lg shadow">
-      <img src="images/gallery4.jpg" alt="House Design 4" class="rounded-lg shadow">
-      <!-- Removed gallery5 & gallery6 if not uploaded -->
+      <img src="images/gallery1.jpg" alt="House Design 1" class="rounded-lg shadow-md hover:shadow-xl transform transition duration-300 hover:scale-105">
+      <img src="images/gallery2.jpg" alt="House Design 2" class="rounded-lg shadow-md hover:shadow-xl transform transition duration-300 hover:scale-105">
+      <img src="images/gallery3.jpg" alt="House Design 3" class="rounded-lg shadow-md hover:shadow-xl transform transition duration-300 hover:scale-105">
+      <img src="images/gallery4.jpg" alt="House Design 4" class="rounded-lg shadow-md hover:shadow-xl transform transition duration-300 hover:scale-105">
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact" class="py-16 bg-gray-100">
     <div class="container mx-auto px-6 text-center">
       <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
       <p class="mb-6">Let’s build your dream home. Reach us through the form or directly on WhatsApp.</p>
-      <form class="max-w-xl mx-auto grid gap-4 text-left">
-        <input type="text" placeholder="Your Name" class="border p-3 rounded w-full" required>
-        <input type="email" placeholder="Your Email" class="border p-3 rounded w-full" required>
-        <textarea placeholder="Your Message" class="border p-3 rounded w-full" required></textarea>
+      <form id="contact-form" class="max-w-xl mx-auto grid gap-4 text-left">
+        <input type="text" id="name" placeholder="Your Name" class="border p-3 rounded w-full" required>
+        <input type="email" id="email" placeholder="Your Email" class="border p-3 rounded w-full" required>
+        <textarea id="message" placeholder="Your Message" class="border p-3 rounded w-full" required></textarea>
         <button type="submit" class="bg-blue-600 text-white py-3 rounded font-semibold hover:bg-blue-700">Send Message</button>
       </form>
       <div class="mt-6">
-        <a href="https://wa.me/918951485650" target="_blank" class="text-green-600 font-semibold">💬 Chat on WhatsApp</a>
+        <a href="https://wa.me/919362313851" target="_blank" class="text-green-600 font-semibold">💬 Chat on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -103,15 +108,59 @@
     <p>&copy; 2025 Marak Builders. All Rights Reserved.</p>
   </footer>
 
-  <!-- JS -->
+  <!-- JS Scripts -->
   <script>
     // Mobile Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+
+    // Contact Form Submission (WhatsApp + mailto fallback)
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(name && email && message){
+        const waMessage = `Hi, my name is ${name} (${email}). %0A${message}`;
+        const waLink = `https://wa.me/919362313851?text=${encodeURIComponent(waMessage)}`;
+        window.open(waLink, '_blank');
+        const mailtoLink = `mailto:nengjesmarak10@gmail.com?subject=Website Inquiry from ${name}&body=${encodeURIComponent(message + "\n\nFrom: " + name + " (" + email + ")")}`;
+        window.location.href = mailtoLink;
+        contactForm.reset();
+      }
+    });
+
+    // Hero tagline animation
+    const taglineElement = document.getElementById('animated-tagline');
+    const taglines = [
+      "Affordable Northeast Traditional & Modern Homes",
+      "Crafted with Care, Built to Last",
+      "Your Dream Home, Our Expertise",
+      "Where Heritage Meets Modern Design"
+    ];
+    let taglineIndex = 0;
+    function typeTagline(text, i = 0) {
+      if (i < text.length) {
+        taglineElement.innerHTML = text.substring(0, i + 1);
+        setTimeout(() => typeTagline(text, i + 1), 50);
+      } else {
+        setTimeout(() => deleteTagline(text), 2000);
+      }
+    }
+    function deleteTagline(text, i = text.length) {
+      if (i >= 0) {
+        taglineElement.innerHTML = text.substring(0, i);
+        setTimeout(() => deleteTagline(text, i - 1), 30);
+      } else {
+        taglineIndex = (taglineIndex + 1) % taglines.length;
+        typeTagline(taglines[taglineIndex]);
+      }
+    }
+    typeTagline(taglines[taglineIndex]);
   </script>
 </body>
 </html>
