@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marak Builders | Northeast Traditional & Modern Homes</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-blue-700">Marak Builders</h1>
+      <ul class="hidden md:flex space-x-8 font-medium">
+        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+        <li><a href="#gallery" class="hover:text-blue-600">Gallery</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+    </nav>
+    <ul id="mobile-menu" class="hidden bg-white text-center md:hidden pb-4">
+      <li><a href="#home" class="block py-2">Home</a></li>
+      <li><a href="#about" class="block py-2">About</a></li>
+      <li><a href="#services" class="block py-2">Services</a></li>
+      <li><a href="#gallery" class="block py-2">Gallery</a></li>
+      <li><a href="#contact" class="block py-2">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center text-white" style="background-image: url('images/hero-bg.jpg');">
+    <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Building Dreams, Preserving Traditions</h2>
+      <p class="mb-6">Affordable Northeast Traditional & Modern Homes with Transparency and Trust</p>
+      <a href="#services" class="bg-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 container mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-6">About Us</h3>
+    <p class="text-lg text-center max-w-3xl mx-auto">
+      At Marak Builders, we combine heritage craftsmanship with modern techniques to create homes
+      that are not only affordable but also rich in cultural identity. We ensure fair wages to our skilled laborers,
+      transparent pricing with no hidden costs, and bring opportunities to local talents.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-10">Our Services</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg">
+          <img src="images/traditional1.jpg" alt="Traditional Home" class="rounded-lg mb-4">
+          <h4 class="text-xl font-semibold mb-2">Northeast Traditional Houses</h4>
+          <p>Expertly crafted homes inspired by Garo, Khasi, Naga, and other tribal traditions. Built with authenticity and durability.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg">
+          <img src="images/modern1.jpg" alt="Modern Home" class="rounded-lg mb-4">
+          <h4 class="text-xl font-semibold mb-2">Modern Pakka Houses</h4>
+          <p>Stylish, budget-friendly, and long-lasting homes designed with modern construction techniques.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-16 container mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-10">Gallery</h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="images/gallery1.jpg" alt="House Design 1" class="rounded-lg shadow">
+      <img src="images/gallery2.jpg" alt="House Design 2" class="rounded-lg shadow">
+      <img src="images/gallery3.jpg" alt="House Design 3" class="rounded-lg shadow">
+      <img src="images/gallery4.jpg" alt="House Design 4" class="rounded-lg shadow">
+      <img src="images/gallery5.jpg" alt="House Design 5" class="rounded-lg shadow">
+      <img src="images/gallery6.jpg" alt="House Design 6" class="rounded-lg shadow">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
+      <p class="mb-6">Let’s build your dream home. Reach us through the form or directly on WhatsApp.</p>
+      <form class="max-w-xl mx-auto grid gap-4 text-left">
+        <input type="text" placeholder="Your Name" class="border p-3 rounded w-full">
+        <input type="email" placeholder="Your Email" class="border p-3 rounded w-full">
+        <textarea placeholder="Your Message" class="border p-3 rounded w-full"></textarea>
+        <button type="submit" class="bg-blue-600 text-white py-3 rounded font-semibold hover:bg-blue-700">Send Message</button>
+      </form>
+      <div class="mt-6">
+        <a href="https://wa.me/918951485650" target="_blank" class="text-green-600 font-semibold">💬 Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-white py-6 text-center">
+    <p>&copy; 2025 Marak Builders. All Rights Reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
