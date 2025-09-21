@@ -56,12 +56,12 @@
       <h3 class="text-3xl font-bold text-center mb-10">Our Services</h3>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg">
-          <img src="images/traditional1.jpg" alt="Traditional Home" class="rounded-lg mb-4">
+          <img src="images/traditional1.jpg" alt="Traditional Northeast Home" class="rounded-lg mb-4">
           <h4 class="text-xl font-semibold mb-2">Northeast Traditional Houses</h4>
           <p>Expertly crafted homes inspired by Garo, Khasi, Naga, and other tribal traditions. Built with authenticity and durability.</p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg">
-          <img src="images/modern1.jpg" alt="Modern Home" class="rounded-lg mb-4">
+          <img src="images/modern1.jpg" alt="Modern Pakka Home" class="rounded-lg mb-4">
           <h4 class="text-xl font-semibold mb-2">Modern Pakka Houses</h4>
           <p>Stylish, budget-friendly, and long-lasting homes designed with modern construction techniques.</p>
         </div>
@@ -77,8 +77,7 @@
       <img src="images/gallery2.jpg" alt="House Design 2" class="rounded-lg shadow">
       <img src="images/gallery3.jpg" alt="House Design 3" class="rounded-lg shadow">
       <img src="images/gallery4.jpg" alt="House Design 4" class="rounded-lg shadow">
-      <img src="images/gallery5.jpg" alt="House Design 5" class="rounded-lg shadow">
-      <img src="images/gallery6.jpg" alt="House Design 6" class="rounded-lg shadow">
+      <!-- Removed gallery5 & gallery6 if not uploaded -->
     </div>
   </section>
 
@@ -88,9 +87,9 @@
       <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
       <p class="mb-6">Let’s build your dream home. Reach us through the form or directly on WhatsApp.</p>
       <form class="max-w-xl mx-auto grid gap-4 text-left">
-        <input type="text" placeholder="Your Name" class="border p-3 rounded w-full">
-        <input type="email" placeholder="Your Email" class="border p-3 rounded w-full">
-        <textarea placeholder="Your Message" class="border p-3 rounded w-full"></textarea>
+        <input type="text" placeholder="Your Name" class="border p-3 rounded w-full" required>
+        <input type="email" placeholder="Your Email" class="border p-3 rounded w-full" required>
+        <textarea placeholder="Your Message" class="border p-3 rounded w-full" required></textarea>
         <button type="submit" class="bg-blue-600 text-white py-3 rounded font-semibold hover:bg-blue-700">Send Message</button>
       </form>
       <div class="mt-6">
@@ -104,6 +103,15 @@
     <p>&copy; 2025 Marak Builders. All Rights Reserved.</p>
   </footer>
 
-  <script src="main.js"></script>
+  <!-- JS -->
+  <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
